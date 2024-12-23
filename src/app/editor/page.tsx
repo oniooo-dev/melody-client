@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import ProjectHeader from '@/components/editor/ProjectHeader'
 import VideoEditor from '@/components/editor/VideoEditor'
