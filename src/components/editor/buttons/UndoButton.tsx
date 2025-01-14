@@ -1,9 +1,17 @@
 import React from 'react'
 
-const UndoButton = () => {
+interface UndoButtonProps {
+    onUndo: () => void;
+}
+
+const UndoButton: React.FC<UndoButtonProps> = ({ onUndo }) => {
     return (
-        <button className='text-blue-500 hover:underline focus:outline-none'>
-            Undo
+        <button onClick={onUndo}>
+            <img
+                src="/assets/editor/icons/undo.png"
+                alt="Undo"
+                className='w-6 h-6 duration-500'
+            />
         </button>
     )
 }

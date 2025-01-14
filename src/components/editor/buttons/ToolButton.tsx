@@ -5,18 +5,28 @@ interface ToolButtonProps {
     icon: string
     onClick: () => void
     isSelected: boolean
+    aiTool: boolean
 }
 
-const ToolButton: React.FC<ToolButtonProps> = ({ label, icon, onClick, isSelected }) => {
+const ToolButton: React.FC<ToolButtonProps> = ({ label, icon, onClick, isSelected, aiTool }) => {
     return (
         <button
             className={`
-                flex flex-col items-center justify-center gap-1 w-16 h-16 duration-500
-                ${isSelected ? 'bg-blue-300' : 'hover:bg-blue-200'}
+                relative flex flex-col items-center justify-center gap-1 w-16 h-16 duration-500
+                ${isSelected ? 'bg-blue-200 hover:bg-blue-200' : 'hover:bg-blue-100'}
             `}
             onClick={onClick}
         >
-            <img src={icon} alt={label} className='w-6 h-6 object-contain' />
+            {
+                aiTool && (
+                    <div className="absolute top-1 right-2">
+                        <div className="text-xs font-medium">
+                            AI
+                        </div>
+                    </div>
+                )
+            }
+            <img src={icon} alt={label} className='w-5 h-5 object-contain' />
             <p className='text-[10px]'>{label}</p>
         </button>
     )

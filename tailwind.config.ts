@@ -8,11 +8,19 @@ export default {
   ],
   theme: {
     extend: {
+      aspectRatio: {
+        '9/16': '9 / 16',
+        '16/9': '16 / 9',
+        '1/1': '1 / 1',
+        '21/9': '21 / 9',
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar-hide')
+  ],
 } satisfies Config;

@@ -1,8 +1,14 @@
 import React from 'react'
 
-const UpgradeButton = () => {
+interface UpgradeButtonProps {
+    onUpgrade: () => void;
+}
+
+const UpgradeButton: React.FC<UpgradeButtonProps> = ({ onUpgrade }) => {
     return (
-        <button className='bg-blue-500 text-white px-4 py-2 rounded-md'>Upgrade</button>
+        <button onClick={onUpgrade}>
+            Upgrade
+        </button>
     )
 }
 
